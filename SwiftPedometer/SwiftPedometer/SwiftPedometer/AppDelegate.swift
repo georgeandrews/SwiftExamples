@@ -3,6 +3,7 @@
 //  SwiftPedometer
 //
 //  Created by George Andrews on 2/5/15.
+//  Copyright (c) 2015 CVTC Mobile Developer Program. All rights reserved.
 //
 
 import UIKit
