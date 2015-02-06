@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SwiftExamples
 Swift Examples for Advanced iOS Development Course. 
 =======
@@ -35,4 +34,3 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
->>>>>>> 7782667b35392df66aaa0b48bf558d0698588e21
