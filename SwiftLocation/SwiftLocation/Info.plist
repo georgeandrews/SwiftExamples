@@ -5,7 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Application requires location services. Is this okay?</string>
+	<string>This application always needs to use location services. Okay?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application needs location services when it is being used. Okay?</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
