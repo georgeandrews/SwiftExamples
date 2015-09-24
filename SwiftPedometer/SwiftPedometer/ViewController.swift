@@ -18,16 +18,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        pedometer.startPedometerUpdatesFromDate(NSCalendar.currentCalendar().startOfDayForDate(NSDate())) {
-            (data, error) -> Void in
-            if error != nil {
-                println("Error: \(error)")
-            } else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.stepsCounter.text = "\(data.numberOfSteps)"
-                });
+        
+        if CMPedometer.isStepCountingAvailable() {
+            pedometer.startPedometerUpdatesFromDate(NSCalendar.currentCalendar().startOfDayForDate(NSDate())) {
+                (data, error) -> Void in
+                if error != nil {
+                    print("Error: \(error)")
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.stepsCounter.text = "\(data!.numberOfSteps)"
+                    });
+                }
             }
+            
+        } else {
+            print("WARNING: Step counting is not available on this device.")
         }
+        
     }
 
 }
