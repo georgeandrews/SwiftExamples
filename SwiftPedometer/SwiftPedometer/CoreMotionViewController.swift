@@ -18,9 +18,9 @@ class CoreMotionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if manager.deviceMotionAvailable {
+        if manager.isDeviceMotionAvailable {
             manager.deviceMotionUpdateInterval = 1
-            manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
+            manager.startDeviceMotionUpdates(to: OperationQueue.main) {
                 (data, error) in
                 if error != nil {
                     print("Error: \(error)")

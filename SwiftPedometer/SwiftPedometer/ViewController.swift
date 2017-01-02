@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if CMPedometer.isStepCountingAvailable() {
-            pedometer.startPedometerUpdatesFromDate(NSCalendar.currentCalendar().startOfDayForDate(NSDate())) {
+            pedometer.startUpdates(from: Calendar.current.startOfDay(for: Date())) {
                 (data, error) -> Void in
                 if error != nil {
                     print("Error: \(error)")
                 } else {
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         self.stepsCounter.text = "\(data!.numberOfSteps)"
                     });
                 }
