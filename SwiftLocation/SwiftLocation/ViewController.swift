@@ -23,14 +23,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
-    @IBAction func findWaldo(sender: AnyObject) {
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+    @IBAction func findWaldo(_ sender: AnyObject) {
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) -> Void in
             
@@ -45,7 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func displayLocation(placemark: CLPlacemark?) {
+    func displayLocation(_ placemark: CLPlacemark?) {
         locationManager.stopUpdatingLocation()
         let postalCode = (placemark?.postalCode != nil) ? placemark?.postalCode : "UNKNOWN"
         self.locationLabel.text = postalCode
