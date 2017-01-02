@@ -18,47 +18,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
     @IBAction func findWaldo(sender: AnyObject) {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
+        locationManager.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.Authorized {
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        // location updated
-        CLGeocoder().reverseGeocodeLocation(manager.location) {
-            (placemarks, error) -> Void in
-            if (error != nil) {
-                println("Error: \(error)")
-            } else {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) -> Void in
+            
+            if let placemarks = placemarks {
                 if placemarks.count > 0 {
-                    if let pm = placemarks[0] as? CLPlacemark {
-                        self.displayLocation(pm)
-                    }
+                    self.displayLocation(placemarks[0])
                 }
+            } else {
+                print("Error: \(error)")
             }
-        
+            
         }
     }
     
     func displayLocation(placemark: CLPlacemark?) {
         locationManager.stopUpdatingLocation()
-        let postalCode = (placemark?.postalCode != nil) ? placemark?.postalCode : "00000"
+        let postalCode = (placemark?.postalCode != nil) ? placemark?.postalCode : "UNKNOWN"
         self.locationLabel.text = postalCode
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error: " + error.localizedDescription)
-    }
 }
 

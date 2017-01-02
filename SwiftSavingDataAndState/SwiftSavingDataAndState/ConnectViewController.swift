@@ -27,13 +27,18 @@ class ConnectViewController: UIViewController {
         let entity = NSEntityDescription.entityForName("Connection", inManagedObjectContext: managedContext)
         let connection = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
+        if Validator.isValidEmail(emailAddressTextField.text) {
+            
+        }
+        
         connection.setValue(firstNameTextField.text, forKey: "firstName")
         connection.setValue(lastNameTextField.text, forKey: "lastName")
         connection.setValue(emailAddressTextField.text, forKey: "emailAddress")
         
-        var error: NSError?
-        if (!managedContext.save(&error)) {
-            println("Could not save \(error), \(error?.userInfo)")
+        do {
+            try managedContext.save()
+        } catch {
+            print("Could not save.")
         }
     }
     

@@ -28,11 +28,10 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName:"Connection")
         
-        var error: NSError?
-        if let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Connection] {
-            connections = fetchedResults
+        if let fetchedResults = try? managedContext.executeFetchRequest(fetchRequest) as? [Connection] {
+            connections = fetchedResults!
         } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+            print("Could not complete fetch.")
         }
     }
     
@@ -42,7 +41,7 @@ class ConnectionsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         
         let connection = connections[indexPath.row]
         

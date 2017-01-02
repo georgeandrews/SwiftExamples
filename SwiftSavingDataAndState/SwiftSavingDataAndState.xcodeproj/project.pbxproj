@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E84BF551BCC4A7A00942B5C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84BF541BCC4A7A00942B5C /* Validator.swift */; settings = {ASSET_TAGS = (); }; };
 		5E915EE71A92C13A006D7B5B /* ConnectionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E915EE51A92C13A006D7B5B /* ConnectionModel.xcdatamodeld */; };
 		5E915EE91A92C1E1006D7B5B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915EE81A92C1E1006D7B5B /* Connection.swift */; };
 		5E915F191A959E1B006D7B5B /* ConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F181A959E1B006D7B5B /* ConnectionsViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E84BF541BCC4A7A00942B5C /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5E915EE61A92C13A006D7B5B /* ConnectionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConnectionModel.xcdatamodel; sourceTree = "<group>"; };
 		5E915EE81A92C1E1006D7B5B /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		5E915F181A959E1B006D7B5B /* ConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				5ED1E9A01A91702300B00D30 /* Supporting Files */,
 				5E915EE51A92C13A006D7B5B /* ConnectionModel.xcdatamodeld */,
 				5E915EE81A92C1E1006D7B5B /* Connection.swift */,
+				5E84BF541BCC4A7A00942B5C /* Validator.swift */,
 			);
 			path = SwiftSavingDataAndState;
 			sourceTree = "<group>";
@@ -165,7 +168,9 @@
 		5ED1E9951A91702300B00D30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "CVTC Mobile Developer Program";
 				TargetAttributes = {
 					5ED1E99C1A91702300B00D30 = {
@@ -226,6 +231,7 @@
 				5ED1E9A31A91702300B00D30 /* AppDelegate.swift in Sources */,
 				5E915EE71A92C13A006D7B5B /* ConnectionModel.xcdatamodeld in Sources */,
 				5E915F191A959E1B006D7B5B /* ConnectionsViewController.swift in Sources */,
+				5E84BF551BCC4A7A00942B5C /* Validator.swift in Sources */,
 				5E915EE91A92C1E1006D7B5B /* Connection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +294,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -354,6 +361,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftSavingDataAndState/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.cvtc.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +374,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftSavingDataAndState/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.cvtc.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,6 +394,7 @@
 				);
 				INFOPLIST_FILE = SwiftSavingDataAndStateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.cvtc.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSavingDataAndState.app/SwiftSavingDataAndState";
 			};
@@ -400,6 +410,7 @@
 				);
 				INFOPLIST_FILE = SwiftSavingDataAndStateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.cvtc.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSavingDataAndState.app/SwiftSavingDataAndState";
 			};
