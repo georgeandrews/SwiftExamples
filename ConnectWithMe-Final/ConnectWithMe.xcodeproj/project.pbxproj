@@ -65,18 +65,34 @@
 			isa = PBXGroup;
 			children = (
 				5E5128121E8EAEF000CDCDFB /* AppDelegate.swift */,
-				5E5128141E8EAEF000CDCDFB /* ConnectViewController.swift */,
-				5E5128271E8EB5E400CDCDFB /* ConnectionsViewController.swift */,
-				5E51282F1E8EBC5C00CDCDFB /* SendEmailViewController.swift */,
+				5E5128331E8F048F00CDCDFB /* Model */,
+				5E5128341E8F049F00CDCDFB /* Controllers */,
 				5E5128161E8EAEF000CDCDFB /* Main.storyboard */,
 				5E51281C1E8EAEF000CDCDFB /* Assets.xcassets */,
 				5E51281E1E8EAEF000CDCDFB /* LaunchScreen.storyboard */,
 				5E5128211E8EAEF000CDCDFB /* Info.plist */,
+			);
+			path = ConnectWithMe;
+			sourceTree = "<group>";
+		};
+		5E5128331E8F048F00CDCDFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				5E5128191E8EAEF000CDCDFB /* ConnectWithMe.xcdatamodeld */,
 				5E51282D1E8EBB3A00CDCDFB /* Connection.swift */,
 				5E5128311E8EEC5100CDCDFB /* CWMDataController.swift */,
 			);
-			path = ConnectWithMe;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5E5128341E8F049F00CDCDFB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E5128141E8EAEF000CDCDFB /* ConnectViewController.swift */,
+				5E5128271E8EB5E400CDCDFB /* ConnectionsViewController.swift */,
+				5E51282F1E8EBC5C00CDCDFB /* SendEmailViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
