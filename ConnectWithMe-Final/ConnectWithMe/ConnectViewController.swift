@@ -31,8 +31,8 @@ class ConnectViewController: UIViewController {
 
   @IBAction func saveConnection(_ sender: Any) {
     
-    print("in saveConnection...")
-    NSLog("in saveConnection...")
+//    print("in saveConnection...")
+//    NSLog("in saveConnection...")
     
     if firstNameTextField.hasText, lastNameTextField.hasText, emailTextField.hasText {
       
