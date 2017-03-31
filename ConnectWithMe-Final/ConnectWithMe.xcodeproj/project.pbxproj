@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1B052C1E8F129A009DEC7E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B052B1E8F129A009DEC7E /* Extensions.swift */; };
 		5E5128131E8EAEF000CDCDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5128121E8EAEF000CDCDFB /* AppDelegate.swift */; };
 		5E5128151E8EAEF000CDCDFB /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5128141E8EAEF000CDCDFB /* ConnectViewController.swift */; };
 		5E5128181E8EAEF000CDCDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5128161E8EAEF000CDCDFB /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E1B052B1E8F129A009DEC7E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E51280F1E8EAEF000CDCDFB /* ConnectWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5128121E8EAEF000CDCDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E5128141E8EAEF000CDCDFB /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				5E5128121E8EAEF000CDCDFB /* AppDelegate.swift */,
+				5E1B052B1E8F129A009DEC7E /* Extensions.swift */,
 				5E5128331E8F048F00CDCDFB /* Model */,
 				5E5128341E8F049F00CDCDFB /* Controllers */,
 				5E5128161E8EAEF000CDCDFB /* Main.storyboard */,
@@ -188,6 +191,7 @@
 				5E5128281E8EB5E400CDCDFB /* ConnectionsViewController.swift in Sources */,
 				5E51281B1E8EAEF000CDCDFB /* ConnectWithMe.xcdatamodeld in Sources */,
 				5E51282E1E8EBB3A00CDCDFB /* Connection.swift in Sources */,
+				5E1B052C1E8F129A009DEC7E /* Extensions.swift in Sources */,
 				5E5128301E8EBC5C00CDCDFB /* SendEmailViewController.swift in Sources */,
 				5E5128151E8EAEF000CDCDFB /* ConnectViewController.swift in Sources */,
 				5E5128131E8EAEF000CDCDFB /* AppDelegate.swift in Sources */,
