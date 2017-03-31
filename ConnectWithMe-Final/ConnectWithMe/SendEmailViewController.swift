@@ -35,14 +35,8 @@ class SendEmailViewController: UIViewController {
   }
   
   @IBAction func sendMessage(_ sender: Any) {
-    
     // FIXME: Implement mime email sending
-    let alert = UIAlertController(title: "Not implemented!", message: "Sorry, email message sending is not yet available.", preferredStyle: .alert)
-    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alert.addAction(okAction)
-    
-    present(alert, animated: true, completion: nil)
-    
+    presentAlert(title: "Not implemented!", message: "Sorry, email message sending is not yet available.")
   }
   
 }

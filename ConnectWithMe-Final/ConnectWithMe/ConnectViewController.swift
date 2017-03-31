@@ -50,29 +50,17 @@ class ConnectViewController: UIViewController {
         
         try moc.save()
         
-        let alert = UIAlertController(title: "Connection saved!", message: "Thanks for connecting with me :]", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true, completion: nil)
+        presentAlert(title: "Connection saved!", message: "Thanks for connecting with me :]")
         
       } catch let error as NSError {
         
-        let alert = UIAlertController(title: "Core Data issue!", message: "Sorry, there was a problem saving your data.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true, completion: nil)
+        presentAlert(title: "Core Data issue!", message: "Sorry, there was a problem saving your data.")
         
         print("Could not save \(error), \(error.userInfo)") // FIXME: Remove before shipping
       }
       
     } else {
-      let alert = UIAlertController(title: "Invalid form data!", message: "Sorry, you must complete all fields appropriately.", preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-      alert.addAction(okAction)
-      
-      present(alert, animated: true, completion: nil)
+      presentAlert(title: "Invalid form data!", message: "Sorry, you must complete all fields appropriately.")
     }
     
   }
