@@ -78,8 +78,10 @@ class ConnectViewController: UIViewController {
   }
   
   func isValidEmail(_ email: String?) -> Bool {
-    // TODO: Validate email
-    return true
+    guard let emailToCheck = email else {
+      return false
+    }
+    return emailToCheck.isValidEmail()
   }
   
   // MARK: - Application State
