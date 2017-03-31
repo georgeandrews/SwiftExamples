@@ -33,10 +33,6 @@ class ConnectViewController: UIViewController {
 
     if firstNameTextField.hasText, lastNameTextField.hasText, emailTextField.hasText, isValidEmail(emailTextField.text) {
       
-      let firstName = firstNameTextField.text
-      let lastName = lastNameTextField.text
-      let email = emailTextField.text
-      
       guard let moc = managedObjectContext else {
         fatalError("MOC not initialized")
       }
@@ -46,9 +42,9 @@ class ConnectViewController: UIViewController {
       }
       
       let connection = Connection(entity: entity, insertInto: moc)
-      connection.firstName = firstName
-      connection.lastName = lastName
-      connection.email = email
+      connection.firstName = firstNameTextField.text
+      connection.lastName = lastNameTextField.text
+      connection.email = emailTextField.text
       
       do {
         
