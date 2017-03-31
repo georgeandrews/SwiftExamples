@@ -19,7 +19,7 @@ class ConnectionsViewController: UITableViewController {
     super.viewDidLoad()
     
     guard let moc = managedObjectContext else {
-      fatalError("MOC not initialized")
+      fatalError("no MOC assigned")
     }
     
     let fetchRequest: NSFetchRequest<Connection> = Connection.fetchRequest()
@@ -67,7 +67,7 @@ class ConnectionsViewController: UITableViewController {
     if editingStyle == .delete {
       
       guard let moc = managedObjectContext else {
-        fatalError("MOC not initialized")
+        fatalError("no MOC assigned")
       }
       
       moc.delete(connections[indexPath.row])
