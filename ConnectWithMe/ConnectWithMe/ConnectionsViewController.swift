@@ -71,16 +71,8 @@ class ConnectionsViewController: UITableViewController {
       }
       
       moc.delete(connections[indexPath.row])
-      
-      do {
-        try moc.save()
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)") // FIXME: Remove before shipping
-      }
-      
       connections.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
-      
     }
     
   }
