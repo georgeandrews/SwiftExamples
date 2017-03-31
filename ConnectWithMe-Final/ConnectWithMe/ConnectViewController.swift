@@ -31,13 +31,11 @@ class ConnectViewController: UIViewController {
 
   @IBAction func saveConnection(_ sender: Any) {
 
-    if firstNameTextField.hasText, lastNameTextField.hasText, emailTextField.hasText {
+    if firstNameTextField.hasText, lastNameTextField.hasText, emailTextField.hasText, isValidEmail(emailTextField.text) {
       
       let firstName = firstNameTextField.text
       let lastName = lastNameTextField.text
       let email = emailTextField.text
-      
-      // TODO: Validate email
       
       guard let moc = managedObjectContext else {
         fatalError("MOC not initialized")
@@ -81,6 +79,11 @@ class ConnectViewController: UIViewController {
       present(alert, animated: true, completion: nil)
     }
     
+  }
+  
+  func isValidEmail(_ email: String?) -> Bool {
+    // TODO: Validate email
+    return true
   }
   
   override func encodeRestorableState(with coder: NSCoder) {
