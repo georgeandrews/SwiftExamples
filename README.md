@@ -9,6 +9,6 @@ In this one hour bootcamp-like session, we'll build upon a simple iOS applicatio
 
 ## ConnectWithMe-Final
 
-This is the Final Project for the "Crank your iOS Development up to 11 with Xcode 8" dev group meeting. 
+This is the Completed Project for the "Crank your iOS Development up to 11 with Xcode 8" dev group meeting. 
 
-Final version of the ConnectWithMe project. 
+Final version of ConnectWithMe project. 
