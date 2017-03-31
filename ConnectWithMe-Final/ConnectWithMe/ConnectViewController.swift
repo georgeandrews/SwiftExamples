@@ -82,6 +82,8 @@ class ConnectViewController: UIViewController {
     return true
   }
   
+  // MARK: - Application State
+  
   override func encodeRestorableState(with coder: NSCoder) {
     coder.encode(firstNameTextField.text, forKey: "firstName")
     coder.encode(lastNameTextField.text, forKey: "lastName")

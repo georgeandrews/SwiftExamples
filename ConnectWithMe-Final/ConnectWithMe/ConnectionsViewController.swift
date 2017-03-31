@@ -39,6 +39,8 @@ class ConnectionsViewController: UITableViewController {
     }
   }
   
+  // MARK: - UITableViewDataSource
+  
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
@@ -57,6 +59,8 @@ class ConnectionsViewController: UITableViewController {
     
     return cell
   }
+  
+  // MARK: - UITableViewDelegate
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
