@@ -11,19 +11,20 @@ import CoreData
 
 class ConnectionsViewController: UITableViewController {
   
+  var managedObjectContext: NSManagedObjectContext?
+  
   var connections = [Connection]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-      return
+    guard let moc = managedObjectContext else {
+      fatalError("MOC not initialized")
     }
     
-    let context = appDelegate.persistentContainer.viewContext
     let fetchRequest: NSFetchRequest<Connection> = Connection.fetchRequest()
     
-    if let results = try? context.fetch(fetchRequest) as [Connection] {
+    if let results = try? moc.fetch(fetchRequest) as [Connection] {
       connections = results
       tableView.reloadData()
     }
@@ -65,15 +66,14 @@ class ConnectionsViewController: UITableViewController {
     
     if editingStyle == .delete {
       
-      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
+      guard let moc = managedObjectContext else {
+        fatalError("MOC not initialized")
       }
-      let context = appDelegate.persistentContainer.viewContext
       
-      context.delete(connections[indexPath.row])
+      moc.delete(connections[indexPath.row])
       
       do {
-        try context.save()
+        try moc.save()
       } catch let error as NSError {
         print("Could not save \(error), \(error.userInfo)") // FIXME: Remove before shipping
       }

@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  ConnectWithMe
@@ -10,6 +11,8 @@ import UIKit
 import CoreData
 
 class ConnectViewController: UIViewController {
+  
+  var managedObjectContext: NSManagedObjectContext?
 
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
@@ -18,6 +21,12 @@ class ConnectViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? ConnectionsViewController {
+      destination.managedObjectContext = managedObjectContext
+    }
   }
 
   @IBAction func saveConnection(_ sender: Any) {
@@ -30,22 +39,22 @@ class ConnectViewController: UIViewController {
       
       // TODO: Validate email
       
-      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
+      guard let moc = managedObjectContext else {
+        fatalError("MOC not initialized")
       }
-      let context = appDelegate.persistentContainer.viewContext
-      guard let entity = NSEntityDescription.entity(forEntityName: "Connection", in: context) else {
+      
+      guard let entity = NSEntityDescription.entity(forEntityName: "Connection", in: moc) else {
         return
       }
       
-      let connection = Connection(entity: entity, insertInto: context)
+      let connection = Connection(entity: entity, insertInto: moc)
       connection.firstName = firstName
       connection.lastName = lastName
       connection.email = email
       
       do {
         
-        try context.save()
+        try moc.save()
         
         let alert = UIAlertController(title: "Connection saved!", message: "Thanks for connecting with me :]", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
