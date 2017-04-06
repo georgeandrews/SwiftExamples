@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       fatalError("Root view controller is not a navigation controller")
     }
     guard let controller = navController.topViewController as? ConnectViewController else {
-      fatalError("Top view controller is not a master view controller: \(navController.topViewController.self)")
+      fatalError("Top view controller is not a master view controller: \(String(describing: navController.topViewController.self))")
     }
     
     controller.managedObjectContext = dataController?.mainContext
